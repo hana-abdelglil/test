@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hana Abdel-Glil — Graphic Designer &amp; Video Editor</title>
+  <meta name="description"
+    content="Portfolio of Hana Abdel-Glil: Graphic Designer, Video Editor, and Visual Content Creator. Brand identity systems, multi-brand commercial campaigns, and editorial video editing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({
+        publicKey: "PYDGJJytNesRxXHJ7",
+      });
+    })();
+  </script>
+  <style>
+    /* ============================================================
+   DESIGN TOKENS & SYSTEM
+   ============================================================ */
+    :root {
+      --paper: #FAF7F1;
+      --paper-dim: #F3EEE3;
+      --paper-card: #FFFFFF;
+      --ink: #181715;
+      --ink-soft: #47443E;
+      --muted: #7F7A6F;
+      --line: #E2DCcb;
+      --line-dim: #ECE7DB;
+
+      --accent: #2A6561;
+      --accent-soft: #DCE8E5;
+      --accent-hover: #1F4D4A;
+
+      --dark: #151618;
+      --dark-surface: #1E2024;
+      --dark-line: #2C2F36;
+      --dark-ink: #F5F3EC;
+      --dark-muted: #9C988F;
+      --dark-accent: #5CC8BD;
+
+      --display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+      --body: 'Manrope', system-ui, -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+      --container: 1260px;
+      --gutter: clamp(24px, 5vw, 64px);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--display);
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .wrap {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--paper);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* Typography Helpers */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--body);
+      font-weight: 600;
+      font-size: 14.5px;
+      padding: 12px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.6);
+      padding: 5px 11px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================================
+   NAV
+   ============================================================ */
+    header.site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 241, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      transition: padding 0.25s ease, background 0.25s ease;
+    }
+
+    .nav-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 18px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-name span {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: var(--body);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      color: var(--ink-soft);
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+      border-color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 1.5px;
+      background: var(--ink);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-toggle span::before {
+      position: absolute;
+      top: -6px;
+    }
+
+    .nav-toggle span::after {
+      position: absolute;
+      top: 6px;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      background: var(--paper);
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: var(--gutter);
+      gap: 24px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 24px;
+      right: var(--gutter);
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    /* ============================================================
+   HERO (PRESERVED EXACTLY AS IS)
+   ============================================================ */
+    .hero {
+      position: relative;
+      padding: min(12vh, 100px) 0 80px;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero-blueprint {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6.2vw, 76px);
+      line-height: 1.04;
+      max-width: 16ch;
+    }
+
+    .hero h1 .accent-word {
+      color: var(--accent);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero-sub {
+      margin-top: 26px;
+      max-width: 660px;
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      margin-top: 38px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      border-top: 1px solid var(--line);
+      padding-top: 26px;
+      max-width: 980px;
+    }
+
+    .hero-meta .num {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .hero-meta .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+    }
+
+    /* ============================================================
+   ABOUT / INFO
+   ============================================================ */
+    .about {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--gutter);
+      align-items: start;
+    }
+
+    .about h2 {
+      font-size: clamp(24px, 3.2vw, 36px);
+      max-width: 12ch;
+    }
+
+    .about-body p {
+      color: var(--ink-soft);
+      font-size: 16.5px;
+      line-height: 1.7;
+    }
+
+    .about-body p+p {
+      margin-top: 16px;
+    }
+
+    /* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+    .section-intro-block {
+      padding: 80px 0 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-intro-block h2 {
+      font-size: clamp(26px, 3.8vw, 42px);
+      max-width: 18ch;
+      margin-top: 10px;
+    }
+
+    /* ============================================================
+   CASE STUDIES & WORK SECTIONS
+   ============================================================ */
+    .case-study {
+      padding: 80px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-head {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: var(--gutter);
+      align-items: start;
+      margin-bottom: 44px;
+    }
+
+    .case-index {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .case-head h3 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.08;
+    }
+
+    .case-roletag {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-soft);
+      background: var(--accent-soft);
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+
+    .case-meta-block {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .case-meta-block dt {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .case-meta-block dt:first-child {
+      margin-top: 0;
+    }
+
+    .case-meta-block dd {
+      margin: 2px 0 0;
+    }
+
+    .case-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .case-body h4 {
+      font-size: 13.5px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .case-body p {
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+
+    .case-body p+p {
+      margin-top: 14px;
+    }
+
+    /* Visual Framing */
+    .figure-frame {
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+      background: #FFFFFF;
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .figure-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .figure-frame.clickable {
+      cursor: zoom-in;
+    }
+
+    .figure-frame.clickable:hover img {
+      transform: scale(1.015);
+    }
+
+    .figure-frame figcaption {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-top: 1px solid var(--line);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: var(--paper-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .gallery-grid.two-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid.four-col {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      overflow: hidden;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      cursor: zoom-in;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-grid.square img {
+      aspect-ratio: 1/1;
+    }
+
+    .gallery-grid.landscape img {
+      aspect-ratio: 16/10;
+    }
+
+    .gallery-grid figure:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-grid figcaption {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      padding: 9px 12px;
+      border-top: 1px solid var(--line);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--paper-dim);
+    }
+
+    /* AI Workflow Sequence */
+    .process-box {
+      margin: 36px 0;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      background: var(--paper-dim);
+      padding: 32px;
+    }
+
+    .process-head h4 {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .process-head p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      max-width: 65ch;
+      margin-bottom: 24px;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+    }
+
+    .process-step {
+      padding: 0 16px 0 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .process-step:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .process-step .step-num {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .process-step .step-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-top: 6px;
+      color: var(--ink);
+    }
+
+    .process-step .step-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .process-tools {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .process-tools strong {
+      color: var(--accent);
+    }
+
+    /* Video Modules */
+    .video-module-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .video-card {
+      background: var(--dark);
+      border: 1px solid var(--dark-line);
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card video {
+      width: 100%;
+      max-height: 480px;
+      background: #000;
+      object-fit: contain;
+      display: block;
+    }
+
+    .video-card-meta {
+      padding: 16px 18px;
+      background: var(--dark-surface);
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .video-card-meta .v-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--dark-accent);
+      letter-spacing: 0.06em;
+    }
+
+    .video-card-meta .v-desc {
+      font-size: 13.5px;
+      color: var(--dark-ink);
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    /* Skills Badges Row & External CTA */
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .skills-tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .external-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-decoration: none;
+      font-family: var(--body);
+    }
+
+    .external-cta .cta-link {
+      font-weight: 700;
+      font-size: 14.5px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .external-cta .cta-link:hover {
+      color: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .external-cta .cta-sub {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================================================
+   COMMUNITY LEADERSHIP
+   ============================================================ */
+    .selected-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .selected-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .selected-feature-card {
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 32px;
+      background: var(--paper-dim);
+    }
+
+    .selected-feature-card h4 {
+      font-size: 22px;
+      font-family: var(--display);
+      font-weight: 700;
+    }
+
+    .selected-feature-card .card-role {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    .selected-feature-card .card-dates {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .selected-feature-card p {
+      margin-top: 16px;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .selected-feature-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+   SKILLS OVERVIEW SECTION
+   ============================================================ */
+    .skills-section {
+      padding: 90px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .skills-section h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 44px;
+      max-width: 15ch;
+    }
+
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 0.8fr;
+      gap: var(--gutter);
+    }
+
+    .skill-col .section-label {
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .skill-col.primary .section-label {
+      color: var(--accent);
+    }
+
+    .skill-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .skill-list li {
+      font-family: var(--display);
+      font-weight: 600;
+      border-bottom: 1px solid var(--line);
+      padding: 13px 0;
+    }
+
+    .skill-col.primary .skill-list li {
+      font-size: 19px;
+    }
+
+    .skill-col.secondary .skill-list li {
+      font-size: 16.5px;
+      color: var(--ink-soft);
+    }
+
+    .skill-col.tertiary .skill-list li {
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+
+    /* ============================================================
+   CONTACT FORM & SECTION
+   ============================================================ */
+    .contact-section {
+      padding: 110px 0 80px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--gutter);
+      align-items: start;
+    }
+
+    .contact-section h2 {
+      font-size: clamp(34px, 5.5vw, 56px);
+      line-height: 1.05;
+    }
+
+    .contact-links-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .contact-link-item {
+      font-family: var(--body);
+      font-weight: 600;
+      font-size: 15.5px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 4px;
+      color: var(--ink);
+      align-self: flex-start;
+      transition: all 0.2s ease;
+    }
+
+    .contact-link-item:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .contact-location {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .contact-form-card {
+      border: 1px solid var(--line);
+      background: #FFFFFF;
+      border-radius: 2px;
+      padding: clamp(24px, 4vw, 40px);
+    }
+
+    .contact-form-card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .contact-form-card p {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      font-family: var(--body);
+      font-size: 15px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: 2px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #FFFFFF;
+    }
+
+    .form-textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-status {
+      margin-top: 16px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.5;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding: 8px 12px;
+      background: var(--paper-dim);
+    }
+
+    .form-status.error {
+      display: block;
+      color: #B93829;
+      border-left: 3px solid #B93829;
+      padding: 8px 12px;
+      background: #FDF3F2;
+    }
+
+    /* ============================================================
+   FOOTER
+   ============================================================ */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 36px 0;
+      background: var(--paper-dim);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-brand h4 {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .footer-brand p {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-links a {
+      font-family: var(--body);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ============================================================
+   LIGHTBOX MODAL
+   ============================================================ */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(15, 16, 18, 0.95);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 2px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      user-select: none;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(30, 32, 36, 0.8);
+      border: 1px solid var(--dark-line);
+      color: #FFFFFF;
+      width: 48px;
+      height: 48px;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: background 0.2s ease;
+      z-index: 210;
+    }
+
+    .lightbox-btn:hover {
+      background: var(--accent);
+    }
+
+    .lightbox-prev {
+      left: -60px;
+    }
+
+    .lightbox-next {
+      right: -60px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      color: #fff;
+      font-size: 24px;
+      font-family: var(--mono);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: -36px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--dark-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .case-head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .case-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid.four-col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+
+      .process-step {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      .process-step:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .video-module-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .selected-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-matrix {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero-meta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 16px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid.two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid.four-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-name">Hana Abdel-Glil <span>/ PORTFOLIO</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Info</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#community">Community Leadership</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#10005;</button>
+    <a href="#about">Info</a>
+    <a href="#work">Work</a>
+    <a href="#community">Community Leadership</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ============================================================
+     HERO (PRESERVED EXACTLY AS IS)
+     ============================================================ -->
+  <section class="hero" id="top">
+    <svg class="hero-blueprint" viewBox="0 0 1400 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+      <g stroke="#2A6561" stroke-width="0.6" fill="none" opacity="0.4">
+        <line x1="900" y1="0" x2="900" y2="700" />
+        <line x1="1020" y1="0" x2="1020" y2="700" />
+        <line x1="1140" y1="0" x2="1140" y2="700" />
+        <line x1="1260" y1="0" x2="1260" y2="700" />
+        <line x1="850" y1="100" x2="1400" y2="100" />
+        <line x1="850" y1="240" x2="1400" y2="240" />
+        <line x1="850" y1="440" x2="1400" y2="440" />
+        <line x1="850" y1="580" x2="1400" y2="580" />
+        <circle cx="1180" cy="320" r="130" />
+        <circle cx="1180" cy="320" r="65" />
+        <path d="M1000 520 L1180 320 L1360 520" />
+      </g>
+    </svg>
+    <div class="wrap hero-inner">
+      <div class="hero-eyebrow eyebrow reveal">Portfolio — Port Said &amp; Cairo, Egypt</div>
+      <h1 class="reveal">Graphic Designer <span class="accent-word">&amp;</span> Video Editor</h1>
+      <p class="hero-sub reveal">
+        I build brand identity systems, high-volume commercial campaigns, and motion-driven editorial content. Backed by
+        an architectural engineering foundation that keeps every visual structure intentional, balanced, and
+        production-ready.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#work" class="btn btn-primary">Explore Case Studies</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-meta reveal">
+        <div>
+          <div class="num">Brand Systems</div>
+          <div class="label">Identity, Type &amp; UI</div>
+        </div>
+        <div>
+          <div class="num">430+ Posts &amp; 15 Reels</div>
+          <div class="label">Multi-Brand Volume</div>
+        </div>
+        <div>
+          <div class="num">AI-Assisted Motion</div>
+          <div class="label">Photo → Scene → Video</div>
+        </div>
+        <div>
+          <div class="num">Editorial Video</div>
+          <div class="label">Pacing, Audio &amp; Motion Type</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     ABOUT / INFO (CLASSIFICATION LINE REMOVED)
+     ============================================================ -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <h2 class="reveal">A structural discipline applied to visual design.</h2>
+      <div class="about-body reveal">
+        <p>I operate as a hybrid creative designer: developing visual identities from initial geometry and rationale,
+          producing high-turnaround social campaigns for active brands, and carrying static assets into dynamic, paced
+          video edits with full audio and typographic precision.</p>
+        <p>My ongoing degree in Architecture Engineering informs my design process — not as an aesthetic theme, but as
+          an analytical habit. It ensures structural hierarchy, proportional balance, and visual systems that scale
+          reliably across print, digital interfaces, and motion feeds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     WORK: FEATURED CASE STUDY (NEONILE)
+     ============================================================ -->
+  <section class="section-intro-block" id="work">
+    <div class="wrap">
+      <div class="section-label reveal">Featured Brand Case Study</div>
+      <h2 class="reveal">Comprehensive identity systems &amp; digital applications.</h2>
+    </div>
+  </section>
+
+  <!-- PROJECT: NEONILE -->
+  <article class="case-study" id="neonile">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Featured Case Study / Brand Identity &bull; Visual System &bull; App UI</span>
+          <h3>NeoNile — Smart City Brand Identity</h3>
+          <span class="case-roletag">Brand Identity &bull; Color System &bull; Typography &bull; App UI</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Context</dt>
+          <dd>Digital Egypt Pioneers Initiative (Ro'ad Masr Al-Raqmeya) &bull; 5-person team project</dd>
+          <dt>Timeline</dt>
+          <dd>June 27 – December 5, 2025</dd>
+          <dt>My Personal Contribution</dt>
+          <dd>Logo mark &amp; wordmark, visual identity system, color palette rationale, typography selection,
+            presentation boards, and mobile app UI.</dd>
+        </dl>
+      </div>
+
+      <!-- Hero Mockup -->
+      <div class="figure-frame clickable reveal" onclick="openLightboxImage(this.querySelector('img'))">
+        <img src="neonile_extracted/page_14.png"
+          alt="NeoNile billboard advertisement showing the brand identity in an urban setting with headline 'Beyond Imagination'">
+        <figcaption>
+          <span>Urban Billboard Application — Brand Identity in Context</span>
+          <span>Click to expand</span>
+        </figcaption>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Concept &amp; Strategic Rationale</h4>
+          <p>NeoNile is a conceptual smart-city identity developed for a futuristic sustainable development along the
+            Nile. The challenge was balancing deep Egyptian cultural heritage with progressive, tech-forward urbanism —
+            moving away from historical clichés toward an identity of fluid continuity and technological optimism.</p>
+          <p>Working within a multidisciplinary team, my direct responsibility covered the core brand system: from
+            mathematical logo geometry to functional digital applications.</p>
+        </div>
+        <div>
+          <h4>Visual System Execution</h4>
+          <p>The visual system translates the Nile's natural flow into clean geometric structures. The primary mark
+            interlacing four 'N' letterforms creates an infinite rotation symbolizing continuous urban renewal. A
+            tailored five-tone color system balances water depth, clean solar energy, and architectural neutrality
+            across both physical touchpoints and digital interfaces.</p>
+        </div>
+      </div>
+
+      <!-- Identity Breakdown: Logo Concept, Pattern & Color System -->
+      <div class="gallery-grid reveal">
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="neonile_extracted/page_04.png"
+            alt="NeoNile logo concept and geometric construction based on four interconnected N letterforms">
+          <figcaption>Logo Geometry &amp; Symbolism</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="neonile_extracted/page_07.png" alt="NeoNile color system with HEX, RGB, and CMYK codes">
+          <figcaption>Color System &amp; Palette</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="neonile_extracted/page_06.png"
+            alt="NeoNile typography selection showing Ara Alharbi Alhanoof, Montserrat, and Brittany Signature">
+          <figcaption>Typography Hierarchy</figcaption>
+        </figure>
+      </div>
+
+      <!-- Identity Applications -->
+      <div class="gallery-grid two-col reveal">
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="neonile_extracted/page_01.png"
+            alt="NeoNile smart city entrance gate mockup with architectural branding">
+          <figcaption>Architectural Entrance &amp; Signage</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="neonile_extracted/page_05.png" alt="NeoNile custom repeating brand pattern derived from wave mark">
+          <figcaption>Brand Pattern &amp; Graphic Asset</figcaption>
+        </figure>
+      </div>
+
+      <!-- App UI Design -->
+      <div class="figure-frame clickable reveal" onclick="openLightboxImage(this.querySelector('img'))">
+        <img src="neonile_extracted/page_25.png"
+          alt="NeoNile mobile app UI screens: The Start onboarding, The App home dashboard, The Sign Up, and The Resident Chat">
+        <figcaption>
+          <span>Digital Application — Mobile App UI (Start, Dashboard, Sign-Up, Smart Resident Chat)</span>
+          <span>Click to expand</span>
+        </figcaption>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">Brand Identity</span>
+          <span class="tag">Logo Geometry</span>
+          <span class="tag">Color Theory</span>
+          <span class="tag">Typography System</span>
+          <span class="tag">App UI Design</span>
+          <span class="tag">Environmental Mockups</span>
+        </div>
+        <a href="https://www.behance.net/hanaabdelglil" target="_blank" rel="noopener noreferrer" class="external-cta">
+          <span class="cta-link">See the full project ↗</span>
+          <span class="cta-sub">View the full project</span>
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================================================
+     WORK: WORKING EXPERIENCE (FREELANCE CLIENT ENGAGEMENTS)
+     ============================================================ -->
+  <section class="section-intro-block">
+    <div class="wrap">
+      <div class="section-label reveal">Working Experience &bull; February–May 2026</div>
+      <h2 class="reveal">Freelance Graphic Designer &amp; Video Editor</h2>
+      <p class="reveal" style="color:var(--ink-soft); margin-top:10px; max-width:65ch; font-size:15.5px;">
+        Multi-brand commercial campaign production and motion editing across three distinct client accounts.
+      </p>
+    </div>
+  </section>
+
+  <!-- BRAND 1: BED BOSS -->
+  <article class="case-study" id="bedboss">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Working Experience / Brand 01 &bull; Commercial Brand System &amp; Volume</span>
+          <h3>Bed Boss — Luxury Sleep &amp; Furniture Systems</h3>
+          <span class="case-roletag">Graphic Designer &amp; Video Editor &bull; Feb–May 2026</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Role &amp; Engagement</dt>
+          <dd>Freelance Graphic Designer &amp; Video Editor &bull; February – May 2026</dd>
+          <dt>Brand Market</dt>
+          <dd>High-end furniture and luxury sleep retail in Saudi Arabia (KSA)</dd>
+          <dt>Production Scope</dt>
+          <dd>Hotel luxury mattresses, ergonomic chairs, orthopedic pillows, bedroom systems, payment installment badges
+            (Tabby, Tamara, MIS Pay), and story/video content.</dd>
+        </dl>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="figure-frame clickable reveal" onclick="openLightboxImage(this.querySelector('img'))">
+        <img src="bedboss/final/insta/مراتب فندقية/بوستات/1.png"
+          alt="Bed Boss Balenciaga hotel mattress hero commercial advertisement with luxury lighting and installment badges">
+        <figcaption>
+          <span>Hero Campaign Visual &bull; Hotel Luxury Mattress Composite</span>
+          <span>Click to expand</span>
+        </figcaption>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Campaign Architecture</h4>
+          <p>Bed Boss was an extensive, multi-category commercial engagement. The objective was creating an unmistakable
+            luxury standard for high-end sleep products while systematically maintaining clear category segmentation
+            (Hotel Mattresses, Relaxation Seating, Orthopedic Pillows, and Bedroom Sets).</p>
+        </div>
+        <div>
+          <h4>Art Direction &amp; Commercial Structure</h4>
+          <p>I established a dramatic, dark-field studio lighting style that highlighted mattress textures and ergonomic
+            contours. Every visual asset was engineered for high conversion — featuring structured pricing hierarchies,
+            seamless installment partner integration, and verified retail compliance.</p>
+        </div>
+      </div>
+
+      <!-- Curated Multi-Category Spread -->
+      <div class="gallery-grid reveal">
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="bedboss/final/insta/كراسي/بوستات/1.png"
+            alt="Bed Boss ergonomic floor relaxation chair in modern studio lighting">
+          <figcaption>Ergonomic Relaxation Seating</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="bedboss/final/insta/المخدات/بوستات/Edit_this_image_202603232131.png"
+            alt="Bed Boss orthopedic pillow collection studio composite">
+          <figcaption>Orthopedic Sleep Pillow Series</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="bedboss/final/insta/مرتبة بيدبوس/بويستات/1.png" alt="Bed Boss premium home mattress collection">
+          <figcaption>Home Luxury Mattress Line</figcaption>
+        </figure>
+      </div>
+
+      <!-- Story / Motion Integration -->
+      <div class="video-module-grid reveal" style="grid-template-columns: 1fr; max-width: 680px; margin: 0 auto 36px;">
+        <div class="video-card">
+          <video controls playsinline preload="metadata" src="bedboss/final/insta/story.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">Bed Boss &bull; Social Story &amp; Video Motion</div>
+            <div class="v-desc">Product feature motion, dynamic text hierarchy, and social conversion pacing.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">High-End Product Retouching</span>
+          <span class="tag">Commercial Lighting &amp; Studio Look</span>
+          <span class="tag">Multi-Category Systems</span>
+          <span class="tag">Fintech Badge Integration</span>
+          <span class="tag">Story Motion Content</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- BRAND 2: B2B -->
+  <article class="case-study" id="b2b">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Working Experience / Brand 02 &bull; Commercial Social &amp; Video Pipeline</span>
+          <h3>B2B — Co-Working Space Campaign</h3>
+          <span class="case-roletag">Graphic Designer &amp; Video Editor &bull; Feb–May 2026</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Role &amp; Engagement</dt>
+          <dd>Freelance Graphic Designer &amp; Video Editor &bull; February – May 2026</dd>
+          <dt>Brand Focus</dt>
+          <dd>B2B Co-Working Space (New Cairo, 1st Settlement)</dd>
+          <dt>Production Scope</dt>
+          <dd>Social media posts, conceptual split compositing, AI visual transformations, Reels motion design,
+            captions, on-video type, and audio.</dd>
+        </dl>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Commercial Brief</h4>
+          <p>B2B required a distinctive social media presence to attract entrepreneurs, freelancers, and growing teams
+            to their co-working hub in New Cairo. The creative strategy focused on visual contrast: illustrating the
+            transformation from informal, distracting home setups to focused, professional workspace environments.</p>
+        </div>
+        <div>
+          <h4>Visual Execution &amp; Compositing</h4>
+          <p>To communicate the value proposition instantly, I designed conceptual split-screen and focal composites.
+            The visual language relied on precise color grading around B2B's signature deep purple, clean Arabic
+            editorial typography, and structured layouts engineered for rapid engagement in social feeds.</p>
+        </div>
+      </div>
+
+      <!-- AI Workflow Diagram -->
+      <div class="process-box reveal">
+        <div class="process-head">
+          <h4>Production Pipeline &bull; AI-Assisted Motion Workflow</h4>
+          <p>A multi-stage pipeline developed to transform static photographic assets into dynamic, broadcast-ready
+            social video content without losing brand consistency.</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-title">Source Asset</div>
+            <div class="step-sub">Location photography &amp; raw interior captures</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-title">AI Transformation</div>
+            <div class="step-sub">Scene extension, lighting &amp; character rendering</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-title">Design Compositing</div>
+            <div class="step-sub">Color grading, brand elements &amp; layout framing</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <div class="step-title">Motion &amp; Sound</div>
+            <div class="step-sub">Dynamic camera movement, text overlays &amp; audio</div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">05</div>
+            <div class="step-title">Final Deliverable</div>
+            <div class="step-sub">High-retention Reels &amp; social feed assets</div>
+          </div>
+        </div>
+        <div class="process-tools">
+          Confirmed AI Tools: <strong>Flow</strong>, <strong>Gemini</strong>, <strong>Waevy AI</strong> &bull;
+          Production Software: <strong>Adobe Photoshop</strong>, <strong>Premiere Pro</strong>, <strong>After
+            Effects</strong>
+        </div>
+      </div>
+
+      <!-- Selected Social Works -->
+      <div class="gallery-grid reveal">
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="b2b/post 1.png"
+            alt="B2B co-working space social post with conceptual split character showing home versus office productivity">
+          <figcaption>Conceptual Split &bull; Work Transition</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="b2b/post 4.png" alt="B2B social post showing executive signing a contract at desk">
+          <figcaption>Professional Hub &bull; Contract Signing</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="b2b/post 6.png" alt="B2B team collaborative meeting in modern workspace">
+          <figcaption>Collaborative Environment &bull; Team Setup</figcaption>
+        </figure>
+      </div>
+
+      <!-- Video Reel Integration -->
+      <div class="video-module-grid reveal">
+        <div class="video-card">
+          <video controls playsinline preload="metadata"
+            src="b2b/AQO1n5CjLCcTwLRv2FoI7a55uu6RL0WEfDZGMo5g6iemODYlQBbd5souDo6Smc1VUD1JZzRQ-qGrdAL0SqFxKP4ljKE0CiMybQFkQI8jDA.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">B2B Reel &bull; AI-Assisted Motion 01</div>
+            <div class="v-desc">Motion pacing, visual transitions, on-screen typography, and audio synchronization.
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <video controls playsinline preload="metadata"
+            src="b2b/AQPw7ZHlyXfqnAwBRCk7PVJ0Dk0iGHkA1PNBojv_-byZzKBCGAn3XvLoUJPV0Ih0ybAE2AE-7Y3Wo2ew3r7zpEq3d8kyLN0tUfPYpvLBgg.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">B2B Reel &bull; AI-Assisted Motion 02</div>
+            <div class="v-desc">Scene rendering, text pop-ups, and brand-aligned commercial pacing.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">Commercial Social Design</span>
+          <span class="tag">AI Scene Transformation</span>
+          <span class="tag">Photo Compositing</span>
+          <span class="tag">Short-form Video Editing</span>
+          <span class="tag">On-Video Typography</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- BRAND 3: YES SPACES -->
+  <article class="case-study" id="yesspaces">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Working Experience / Brand 03 &bull; Standalone Identity &amp; Content</span>
+          <h3>Yes Spaces — Dedicated Office Spaces</h3>
+          <span class="case-roletag">Graphic Designer &amp; Video Editor &bull; Feb–May 2026</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Role &amp; Engagement</dt>
+          <dd>Freelance Graphic Designer &amp; Video Editor &bull; February – May 2026</dd>
+          <dt>Brand Positioning</dt>
+          <dd>Dedicated private office spaces for business owners (New Cairo, 5th Settlement)</dd>
+          <dt>Key Deliverables</dt>
+          <dd>Curated social campaign system, visual metaphors, promotional motion reels, and brand consistency.</dd>
+        </dl>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Brand Voice &amp; Differentiation</h4>
+          <p>Treated as an entirely distinct brand entity from B2B, Yes Spaces required a more upscale, private, and
+            corporate tone. While B2B emphasized collaborative co-working, Yes Spaces catered to established business
+            owners and executives requiring private, high-spec dedicated offices.</p>
+        </div>
+        <div>
+          <h4>Conceptual Art Direction</h4>
+          <p>I built a signature aesthetic combining deep forest green with warm gold accents. The creative direction
+            utilized surrealist mental metaphors (e.g. expanding mindset into an executive boardroom, physical
+            switchboards for professional momentum) that stood out decisively in executive social feeds.</p>
+        </div>
+      </div>
+
+      <!-- Selected Social Post Grid -->
+      <div class="gallery-grid reveal">
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="yes spaces/post1 1.png"
+            alt="Yes Spaces social post with surrealist split head showing an executive boardroom inside, headline 'Productivity is inside you, but needs the right environment'">
+          <figcaption>Productivity Environment &bull; Metaphorical Composite</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="yes spaces/post 22.png"
+            alt="Yes Spaces social post showing hand turning on a luxury wooden light switch with headline 'Switch on your success'">
+          <figcaption>Momentum &bull; 'Switch On Your Success'</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="yes spaces/post 56.png" alt="Yes Spaces social post showcasing private office interior">
+          <figcaption>Private Workspace &bull; Spatial Interior</figcaption>
+        </figure>
+      </div>
+
+      <!-- Video Integration -->
+      <div class="video-module-grid reveal">
+        <div class="video-card">
+          <video controls playsinline preload="metadata" src="yes spaces/0.1.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">Yes Spaces Motion Reel &bull; Commercial Cut 01</div>
+            <div class="v-desc">Corporate pacing, spatial reveal motion, custom typography and branding.</div>
+          </div>
+        </div>
+        <div class="video-card">
+          <video controls playsinline preload="metadata" src="yes spaces/finallllll.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">Yes Spaces Motion Reel &bull; Commercial Cut 02</div>
+            <div class="v-desc">Paced video storytelling highlighting workspace benefits and call-to-action.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">Brand Distinction</span>
+          <span class="tag">Conceptual Art Direction</span>
+          <span class="tag">Social Campaign Design</span>
+          <span class="tag">Video Editing &amp; Rhythm</span>
+          <span class="tag">Corporate Visual Voice</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================================================
+     WORK: INDEPENDENT COMMERCIAL PROJECTS (AR CLINIC & CARPITURE)
+     ============================================================ -->
+  <section class="section-intro-block">
+    <div class="wrap">
+      <div class="section-label reveal">Independent Commercial Projects</div>
+      <h2 class="reveal">Editorial video post-production &amp; publication design.</h2>
+    </div>
+  </section>
+
+  <!-- PROJECT: AR CLINIC -->
+  <article class="case-study" id="arclinic">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Commercial Project / Editorial Video Post-Production</span>
+          <h3>AR Clinic — Medical Interview Video Series</h3>
+          <span class="case-roletag">Video Editor &bull; Feb–May 2026</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Role &amp; Format</dt>
+          <dd>Video Editor &bull; Doctor &amp; specialist healthcare video interviews</dd>
+          <dt>Timeline</dt>
+          <dd>February – May 2026</dd>
+          <dt>Editing Scope</dt>
+          <dd>Dialogue pacing, multi-track audio noise reduction, skin-tone color grading, motion typography, medical
+            pop-up graphics, and engagement rhythm.</dd>
+        </dl>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Editorial Craft &amp; Pacing</h4>
+          <p>Medical interview content demands absolute clarity and professional trust. As the video editor, my focus
+            was sculpting spoken dialogue to eliminate hesitations and maintain an informative, engaging conversational
+            rhythm that respects the viewer's attention.</p>
+        </div>
+        <div>
+          <h4>Visual &amp; Audio Treatment</h4>
+          <p>Every cut underwent complete post-production refinement: balancing audio frequencies for broadcast clarity,
+            color-correcting clinic lighting to ensure natural skin tones, and designing kinetic text overlays and
+            anatomical pop-up graphics that reinforce key medical advice dynamically.</p>
+        </div>
+      </div>
+
+      <!-- Video Showcase Grid -->
+      <div class="video-module-grid reveal">
+        <div class="video-card">
+          <video controls playsinline preload="metadata" src="Ar Clinic/1.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">AR Clinic Interview &bull; Cut 01</div>
+            <div class="v-desc">Color grading, dialogue pacing, dynamic callout typography, and audio normalization.
+            </div>
+          </div>
+        </div>
+        <div class="video-card">
+          <video controls playsinline preload="metadata" src="Ar Clinic/4.mp4"></video>
+          <div class="video-card-meta">
+            <div class="v-title">AR Clinic Interview &bull; Cut 02</div>
+            <div class="v-desc">Keypoint text animation, pop-up graphics, and seamless medical narrative editing.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">Dialogue Editing</span>
+          <span class="tag">Audio Cleanup &amp; Mixing</span>
+          <span class="tag">Color Correction &amp; Skin Tones</span>
+          <span class="tag">Motion Typography</span>
+          <span class="tag">Medical Graphic Pop-ups</span>
+          <span class="tag">Rhythm &amp; Cut Pacing</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- PROJECT: CARPITURE SA -->
+  <article class="case-study" id="carpiture">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Commercial Project / Visual Content &amp; Catalogue Design</span>
+          <h3>CarPiture SA — Luxury Furniture Presentation</h3>
+          <span class="case-roletag">Catalogue Design &bull; Editorial Spreads &bull; Feb–May 2026</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Role &amp; Timeline</dt>
+          <dd>Visual Content &amp; Catalogue Designer &bull; February – May 2026</dd>
+          <dt>Scope</dt>
+          <dd>Premium product catalogues for dining rooms and salon collections</dd>
+          <dt>Focus</dt>
+          <dd>Warm editorial atmosphere, spatial balance, luxury brand typography, and structured cataloguing.</dd>
+        </dl>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Art Direction &amp; Layout Philosophy</h4>
+          <p>For CarPiture SA, the emphasis was presenting handcrafted furniture collections with an understated, quiet
+            luxury. The catalogue spreads balance spacious full-bleed room photography with warm earthy tones, clear
+            product hierarchy, and elegant typography.</p>
+        </div>
+        <div>
+          <h4>Catalogue Design Deliverables</h4>
+          <p>Designed comprehensive publication catalogues for the Dining (سفرات) and Salon (صالونات) product lines.
+            Every page established a cohesive dialogue between material textures, ambient lighting, and essential
+            product specifications.</p>
+        </div>
+      </div>
+
+      <!-- Curated Catalogue Spreads -->
+      <div class="figure-frame clickable reveal" onclick="openLightboxImage(this.querySelector('img'))">
+        <img src="carpiture/extracted_1/page_01.png"
+          alt="CarPiture SA dining room luxury catalogue spread with headline 'Luxury meets comfort'">
+        <figcaption>
+          <span>Catalogue Editorial Spread &bull; Dining Room Collection</span>
+          <span>Click to expand</span>
+        </figcaption>
+      </div>
+
+      <div class="figure-frame clickable reveal" onclick="openLightboxImage(this.querySelector('img'))">
+        <img src="carpiture/extracted_2/page_01.png"
+          alt="CarPiture SA salon catalogue spread showing modern living room seating">
+        <figcaption>
+          <span>Catalogue Editorial Spread &bull; Salon &amp; Living Room Series</span>
+          <span>Click to expand</span>
+        </figcaption>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">Publication &amp; Catalogue Layout</span>
+          <span class="tag">Editorial Typography</span>
+          <span class="tag">Furniture Art Direction</span>
+          <span class="tag">Print-Ready Preparation</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================================================
+     WORK: SELECTED WORK (RO'AD MASR / DEPI)
+     ============================================================ -->
+  <article class="case-study gallery-section" id="roadmasr">
+    <div class="wrap">
+      <div class="case-head reveal">
+        <div>
+          <span class="case-index">Selected Work / Applied Design Range &amp; Execution</span>
+          <h3>Digital Egypt Pioneers — Applied Design Range</h3>
+          <span class="case-roletag">Selected Practical Exercises &bull; Compositing &bull; Layout &bull;
+            Illustration</span>
+        </div>
+        <dl class="case-meta-block">
+          <dt>Context</dt>
+          <dd>Intensive Graphic Design Track, Digital Egypt Pioneers Initiative (DEPI / MCIT)</dd>
+          <dt>Nature of Work</dt>
+          <dd>Individual practical design execution across diverse commercial scenarios</dd>
+          <dt>Core Competencies</dt>
+          <dd>Advanced Photoshop compositing, double-exposure technique, editorial magazine design, product
+            manipulation, and vector illustration.</dd>
+        </dl>
+      </div>
+
+      <div class="case-body reveal">
+        <div>
+          <h4>Demonstrating Technical &amp; Stylistic Versatility</h4>
+          <p>A compact curation of standalone design exercises from professional training. Rather than forcing these
+            into an artificial case study, this collection demonstrates fast-turnaround adaptability across commercial
+            advertising, editorial layout, and digital illustration.</p>
+        </div>
+        <div>
+          <h4>Craft &amp; Execution Highlights</h4>
+          <p>Highlights include architectural double-exposure portraiture, high-fashion editorial spreads, commercial
+            confectionery advertising flyers, luxury fragrance concepting, and vector character logo illustration.</p>
+        </div>
+      </div>
+
+      <!-- Curated 6-Item Skills Gallery -->
+      <div class="gallery-grid reveal">
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="depi/Double Exposure 2.jpg"
+            alt="Double exposure portrait blending silhouette with architectural city skyline titled 'Urban Dreams within Human Silence'">
+          <figcaption>Photo Compositing &bull; Double Exposure</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="depi/Hana Task 6 OPTION2.1 Perfume.jpg"
+            alt="Dolce and Gabbana Light Blue perfume commercial advertisement composite on marble pedestal with clouds">
+          <figcaption>Commercial Ad &bull; Fragrance Composite</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="depi/task 2.4.2.jpg"
+            alt="Grand Egyptian Museum opening announcement magazine editorial layout with Tutankhamun mask">
+          <figcaption>Editorial Layout &bull; Cultural Heritage</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="depi/icecreem flyer.jpg"
+            alt="Blueberry ice cream flyer design with dynamic circular depth and typography">
+          <figcaption>Advertising Flyer &bull; Food &amp; Beverage</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="depi/لوجو-01.png" alt="Grandparents illustrated character logo mark with Arabic typography">
+          <figcaption>Vector Character &amp; Logo Illustration</figcaption>
+        </figure>
+        <figure onclick="openLightboxImage(this.querySelector('img'))">
+          <img src="depi/task 2.6.png"
+            alt="Salty Soul interior wall decor plate hanging composition with beach club styling">
+          <figcaption>Spatial Retouching &amp; Compositing</figcaption>
+        </figure>
+      </div>
+
+      <div class="skills-row reveal">
+        <div class="skills-tags-wrap">
+          <span class="tag">Advanced Photo Manipulation</span>
+          <span class="tag">Editorial Magazine Layout</span>
+          <span class="tag">Vector Illustration</span>
+          <span class="tag">Advertising Concepting</span>
+          <span class="tag">Commercial Retouching</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============================================================
+     COMMUNITY LEADERSHIP (GDG SEPARATE ENTRY)
+     ============================================================ -->
+  <section class="selected-section" id="community">
+    <div class="wrap">
+      <div class="section-label reveal">Community Leadership</div>
+      <div class="selected-cards-grid reveal">
+        <div class="selected-feature-card">
+          <h4>Google Developer Group (GDG)</h4>
+          <div class="card-role">Media Team Member &bull; Visual Designer</div>
+          <div class="card-dates">2024 – 2026 (Ongoing)</div>
+          <p>Continuous creative support for community tech events, developer workshops, and regional outreach over a
+            sustained two-year period.</p>
+          <ul>
+            <li>Designed event identities, social key visuals, and attendee promotional materials.</li>
+            <li>Maintained visual consistency across digital channels, presentations, and print assets.</li>
+            <li>Collaborated closely with technical leads and organizing committees.</li>
+          </ul>
+        </div>
+        <div class="selected-feature-card">
+          <h4>Academic &amp; Methodological Foundation</h4>
+          <div class="card-role">Architecture Engineering Degree</div>
+          <div class="card-dates">Higher Institute of Engineering &bull; Expected 2029</div>
+          <p>An architectural foundation provides a distinct working method across all visual communications:</p>
+          <ul>
+            <li>Rigorous spatial, structural, and grid-based layout composition.</li>
+            <li>Systemic thinking: designing visual identities that maintain structural integrity across any medium.
+            </li>
+            <li>Clarity under complex multi-brand production constraints.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     SKILLS & TOOLKIT
+     ============================================================ -->
+  <section class="skills-section" id="skills">
+    <div class="wrap">
+      <div class="section-label reveal">Tools &amp; Capabilities</div>
+      <h2 class="reveal" style="margin-top:14px;">Graphic design core &mdash; supported by motion, video, and AI
+        pipelines.</h2>
+      <div class="skills-matrix">
+        <div class="skill-col primary reveal">
+          <span class="section-label">01 / Graphic Design</span>
+          <ul class="skill-list">
+            <li>Adobe Photoshop</li>
+            <li>Adobe Illustrator</li>
+            <li>Adobe InDesign</li>
+            <li>Brand Identity Systems</li>
+            <li>Editorial &amp; Catalogue Layout</li>
+            <li>Social Media Design Systems</li>
+          </ul>
+        </div>
+        <div class="skill-col secondary reveal">
+          <span class="section-label">02 / Video &amp; Motion</span>
+          <ul class="skill-list">
+            <li>Adobe Premiere Pro</li>
+            <li>Adobe After Effects</li>
+            <li>CapCut Desktop</li>
+            <li>Adobe Audition (Audio Clean)</li>
+            <li>Paced Dialogue &amp; Interview Cuts</li>
+            <li>Kinetic &amp; Motion Typography</li>
+          </ul>
+        </div>
+        <div class="skill-col tertiary reveal">
+          <span class="section-label">03 / AI &amp; Presentation</span>
+          <ul class="skill-list">
+            <li>Flow / Gemini / Waevy AI</li>
+            <li>AI Scene Transformation</li>
+            <li>PowerPoint &amp; Keynote</li>
+            <li>Canva Pro</li>
+            <li>Cross-Platform Collaboration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     CONTACT SECTION (WITH EMAILJS FORM)
+     ============================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <div class="eyebrow reveal">Initiate a Project</div>
+        <h2 class="reveal" style="margin-top:18px;">Let's build something intentional together.</h2>
+        <p class="reveal" style="color:var(--ink-soft); margin-top:20px; max-width:44ch; font-size:16px;">
+          Available for brand identity systems, high-volume social campaigns, commercial motion content, and editorial
+          video editing.
+        </p>
+        <div class="contact-links-sidebar reveal">
+          <a href="mailto:hanaabdelglil@gmail.com" class="contact-link-item">hanaabdelglil@gmail.com</a>
+          <a href="https://linkedin.com/in/hana-abdel-glil" target="_blank" rel="noopener noreferrer"
+            class="contact-link-item">linkedin.com/in/hana-abdel-glil &rarr;</a>
+          <a href="https://www.behance.net/hanaabdelglil" target="_blank" rel="noopener noreferrer"
+            class="contact-link-item">behance.net/hanaabdelglil &rarr;</a>
+          <div class="contact-location">Based in Port Said &amp; Cairo, Egypt &bull; Available Worldwide</div>
+        </div>
+      </div>
+
+      <!-- EmailJS Contact Form -->
+      <div class="contact-form-card reveal">
+        <h3>Send a Direct Message</h3>
+        <p>Fill in the form below and your message will be delivered directly to my inbox.</p>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="formName">Name *</label>
+            <input type="text" id="formName" name="name" class="form-input" placeholder="Your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formEmail">Email *</label>
+            <input type="email" id="formEmail" name="email" class="form-input" placeholder="name@domain.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="formSubject">Subject *</label>
+            <input type="text" id="formSubject" name="subject" class="form-input" placeholder="Project or inquiry title"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="formMessage">Message *</label>
+            <textarea id="formMessage" name="message" class="form-textarea"
+              placeholder="Tell me about your project scope, timeline, or requirements..." required></textarea>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn btn-primary"
+            style="width:100%; justify-content:center; margin-top:8px;">
+            Send message ↗
+          </button>
+
+          <div id="formStatus" class="form-status" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <h4>Hana Abdel-Glil</h4>
+        <p>Graphic Designer &amp; Video Editor</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://linkedin.com/in/hana-abdel-glil" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li><a href="mailto:hanaabdelglil@gmail.com">Email</a></li>
+        <li><a href="https://www.behance.net/hanaabdelglil" target="_blank" rel="noopener noreferrer">Behance</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Hana Abdel-Glil</div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+     LIGHTBOX MODAL WITH GALLERY NAVIGATION
+     ============================================================ -->
+  <div class="lightbox" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" aria-label="Close image modal" onclick="closeLightbox(event)">&times;</button>
+      <button class="lightbox-btn lightbox-prev" aria-label="Previous image"
+        onclick="prevLightboxImage()">&#8592;</button>
+      <img id="lightboxImg" src="" alt="Expanded View">
+      <button class="lightbox-btn lightbox-next" aria-label="Next image" onclick="nextLightboxImage()">&#8594;</button>
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     CLIENT LOGIC & INTERACTIONS
+     ============================================================ -->
+  <script>
+    // Mobile Navigation
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    if (navToggle && mobileMenu && mobileClose) {
+      navToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+        navToggle.setAttribute('aria-expanded', 'true');
+      });
+      mobileClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // ------------------------------------------------------------
+    // Lightbox Modal with Gallery Navigation
+    // ------------------------------------------------------------
+    const lightboxModal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    let currentGalleryImages = [];
+    let currentImageIndex = 0;
+
+    function updateGalleryList() {
+      currentGalleryImages = Array.from(document.querySelectorAll('.figure-frame img, .gallery-grid figure img'));
+    }
+
+    function openLightboxImage(imgElement) {
+      if (!imgElement) return;
+      updateGalleryList();
+      currentImageIndex = currentGalleryImages.indexOf(imgElement);
+      if (currentImageIndex === -1) {
+        currentImageIndex = 0;
+        currentGalleryImages = [imgElement];
+      }
+      showLightboxCurrent();
+      lightboxModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showLightboxCurrent() {
+      const img = currentGalleryImages[currentImageIndex];
+      if (img && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || 'Expanded View';
+        if (lightboxCaption) {
+          lightboxCaption.textContent = img.alt || '';
+        }
+      }
+    }
+
+    function nextLightboxImage() {
+      if (currentGalleryImages.length > 1) {
+        currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+        showLightboxCurrent();
+      }
+    }
+
+    function prevLightboxImage() {
+      if (currentGalleryImages.length > 1) {
+        currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+        showLightboxCurrent();
+      }
+    }
+
+    function closeLightbox(e) {
+      if (lightboxModal) {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowRight') {
+        nextLightboxImage();
+      } else if (e.key === 'ArrowLeft') {
+        prevLightboxImage();
+      }
+    });
+
+    // ------------------------------------------------------------
+    // EmailJS Contact Form Integration
+    // ------------------------------------------------------------
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Client-side validation
+        const name = document.getElementById('formName').value.trim();
+        const email = document.getElementById('formEmail').value.trim();
+        const subject = document.getElementById('formSubject').value.trim();
+        const message = document.getElementById('formMessage').value.trim();
+
+        if (!name || !email || !subject || !message) {
+          formStatus.className = 'form-status error';
+          formStatus.textContent = 'Please fill in all required fields.';
+          return;
+        }
+
+        // Loading State
+        submitBtn.disabled = true;
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending…';
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+
+        // Send via EmailJS browser SDK
+        emailjs.sendForm('service_ty5c59v', 'template_7b3nvtl', contactForm)
+          .then(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            contactForm.reset();
+            formStatus.className = 'form-status success';
+            formStatus.textContent = 'Message sent — thank you.';
+          }, function (error) {
+            console.error('EmailJS Error:', error);
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+            formStatus.className = 'form-status error';
+            formStatus.textContent = 'Something went wrong. Please try again.';
+          });
+      });
+    }
+
+    // ------------------------------------------------------------
+    // Reveal on Scroll via IntersectionObserver
+    // ------------------------------------------------------------
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+
+</html>
